@@ -39,16 +39,18 @@ def predict_spam(str):
         return 'Not spam'
     else:
         return 'Spam'
+        
+def my_streamlit_app():
+    vector = load(open("vector_tfidf.sav", "rb"))
+    model = load(open("xg_spam.sav", "rb"))
+    
+    review = st.text_input("Enter the SMS:")
+    
+    if st.button("Submit"):
+        result = predict_spam(review)
+        st.write(f"Classification: {result}")
 
-vector = load(open("vector_tfidf.sav", "rb"))
-model = load(open("xg_spam.sav", "rb"))
-
-review = st.text_input("Enter the SMS:")
-
-if st.button("Submit"):
-    result = predict_spam(review)
-    st.write(f"Classification: {result}")
-
-
+if __name__ == '__main__':
+    my_streamlit_app()
 
 
