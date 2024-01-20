@@ -24,7 +24,7 @@ def main():
         result = predict_spam(review)
         st.write(f"Classification: {result}")
 
-#if __name__ == "__main__":
-#   main()
+if __name__ == "__main__":
+   main()
 
 
