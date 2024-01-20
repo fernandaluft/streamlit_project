@@ -1,3 +1,6 @@
+import os
+os.environ['FLASK_ENV'] = 'production'
+
 import streamlit as st
 from pickle import load
 
@@ -21,7 +24,7 @@ def main():
         result = predict_spam(review)
         st.write(f"Classification: {result}")
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#   main()
 
 
